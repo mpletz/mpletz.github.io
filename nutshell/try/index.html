@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!-- Meta -->
+    <title>Try Nutshell!</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=550"> <!-- mobile -->
+
+    <!-- Favicon & Style -->
+    <link rel="stylesheet" href="try.css"></link>
+    <link rel="icon" type="image/png" href="../favicon.png">
+
+    <!-- Social Sharing -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@digitalocean" />
+    <meta name="twitter:title" content="Nutshell (interactive demo)" />
+    <meta name="twitter:description" content="a tool to let your readers dive into details" />
+    <meta name="twitter:image" content="https://ncase.me/nutshell/pics/thumbnail.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nutshell (interactive demo)" />
+    <meta property="og:description" content="a tool to let your readers dive into details" />
+    <meta property="og:url" content="https://ncase.me/nutshell/try/" />
+    <meta property="og:image" content="https://ncase.me/nutshell/pics/thumbnail.png" />
+
+</head>
+<body>
+    <div id="container">
+
+        <!-- LEFT HALF: EDITOR -->
+        <div id="left-half">
+            <div class="half-title">
+                <span class="show-only-when-desktop">
+                    Just write in whatever tool you <i>already</i> use...
+                </span>
+                <span class="show-only-when-mobile">
+                    write in
+                </span>
+                <span class="inline-button" onclick="switchTool('rich')">rich text</span>
+                <span class="inline-button" onclick="switchTool('md')">markdown</span>
+                <span class="inline-button" onclick="switchTool('html')">html</span>
+                <span class="point-down">⤵</span>
+            </div>
+            <div id="editor">
+                <div id="editor-rich">
+                    <div id="editor-rich-textbox"></div>
+                </div>
+                <div id="editor-md"></div>
+                <div id="editor-html"></div>
+            </div>
+        </div>
+
+        <!-- RIGHT HALF: PREVIEW NUTSHELL -->
+        <div id="right-half">
+            <div class="half-title">
+                <span class="show-only-when-desktop">
+                    ...and Nutshell will convert
+                    <a href="javascript:alert('any link with a :colon at the front, that is.');">:links</a>
+                    to "expandable explanations"! ✨
+                </span>
+                <span class="show-only-when-mobile">
+                    Nutshell converts to
+                </span>
+                <span class="point-down show-only-when-mobile">⤵</span>
+                <span class="inline-button" onclick="refreshPreview()">refresh</span>
+                <span class="point-down show-only-when-desktop">⤵</span>
+            </div>
+            <div id="try-nutshell-output"></div>
+        </div>
+
+        <!-- BOTTOM: CHOOSE DEMO -->
+        <div id="bottom">
+            <div class="half-title" style="font-size:20px">
+                <span class="show-only-when-desktop">
+                    for more advanced features & "features", check out
+                </span>
+                <a href="https://github.com/ncase/nutshell#advanced-features--options" target="_blank">the full documentation</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Other People's Code -->
+<link href="libraries/quill.snow.css" rel="stylesheet">
+<script src="libraries/quill.js"></script>
+<link rel="stylesheet" href="libraries/codemirror.min.css"></link>
+<script src="libraries/codemirror.min.js"></script>
+<script src="libraries/markdown.min.js"></script>
+<script src="libraries/xml.min.js"></script>
+<script src="libraries/showdown.min.js"></script>
+<script src="libraries/beautify-html.min.js"></script>
+
+<!-- Nutshell! -->
+<script src="../nutshell.js"></script>
+<script>
+    Nutshell.setOptions({
+        startOnLoad: false,
+        //lang: 'ko'
+    });
+</script>
+
+<!-- Try Nutshell -->
+<script src="try.js"></script>
+
+</html>

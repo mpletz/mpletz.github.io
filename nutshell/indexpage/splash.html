@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    html,body{
+        width:100%; height:100%;
+        margin:0;
+        overflow: hidden;
+    }
+    #splash_video{
+        width: 750px;
+    }
+    @media (max-width: 700px){
+        #splash_video{
+            width:520px;
+        }
+    }
+</style>
+</head>
+<body>
+    <video id="splash_video" autoplay muted>
+        <source src="screenies/splash.mp4" type="video/mp4">
+    </video>
+</body>
+</html>
+
+<script>
+let splash = document.getElementById('splash_video');
+splash.play();
+splash.addEventListener('ended',(e)=>{
+    splash.currentTime = 35/12; // 35th frame at 12fps.
+    splash.play();
+},false);
+</script>
