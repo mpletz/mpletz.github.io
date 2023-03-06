@@ -4,7 +4,7 @@ pre code {
   display: block;
   padding: 20px;
 }
-  blockquote {font-size: 150%;}
+  blockquote {font-size: 100%; font-style:italic}
   body {
 
 width: calc(100% - 20px);
