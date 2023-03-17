@@ -21,7 +21,7 @@ Martin Pletz, Leoben, 2023-01
 
 
 ## :x Vorlesung
-am [Lehrstuhl für Konstruieren in Kunst- und Verbundstoffen](https://www.kunststofftechnik.at/konstruieren) des Department Kunststofftechnik der Montanuniversität Leoben, Literatur, [mu-online Link](https://online.unileoben.ac.at/mu_online/pl/ui/$ctx/wbLv.wbShowLVDetail?pStpSpNr=3214574), Python Lernen Links. Siehe auch die Schwester-VU [Finite Elemente Methode für KT](https://online.unileoben.ac.at/mu_online/pl/ui/$ctx/wbLv.wbShowLVDetail?pStpSpNr=3214576) und die weiterführende Vorlesung *Risse und Reibung*.
+am [Lehrstuhl für Konstruieren in Kunst- und Verbundstoffen](https://www.kunststofftechnik.at/konstruieren) des Department Kunststofftechnik der Montanuniversität Leoben, Literatur, [mu-online Link](https://online.unileoben.ac.at/mu_online/pl/ui/$ctx/wbLv.wbShowLVDetail?pStpSpNr=3214574), Python Lernen Links. Siehe auch die Schwester-VU [Finite Elemente Methode für KT](https://online.unileoben.ac.at/mu_online/pl/ui/$ctx/wbLv.wbShowLVDetail?pStpSpNr=3214576) und die weiterführende Vorlesung [FE Modellierung mit Python und ABAQUS](https://online.unileoben.ac.at/mu_online/pl/ui/$ctx/wbLv.wbShowLVDetail?pStpSpNr=3212968).
 
 ## :x youtube
 
@@ -87,7 +87,7 @@ Mechanik der Kunststoffe: Warum Dinge kaputt gehen. _MW-WT Einführung: KKV Teil
 IV, 3 SWS, Rettl & Pletz
 
 **Inhalt**: Aufbau auf Grundprinzipien aus der Mechanik: Modellbildung und Systemanalyse; 
-Materialverhalten (lin.elastisch, hyperelstaisch, elasto-plastisch, viskoelastisch) und Versagen auf Materialebene; 
+Materialverhalten (lin.elastisch, hyperelastisch, elastisch-plastisch, viskoelastisch) und Versagen auf Materialebene; 
 Strukturverhalten: Verformung und Versagen, Rolle von Kerben
 
 **Inhaltliche Voraussetzungen**: Grundlagen aus der Mechanik und Festigkeitslehre: Spannungsmatrix und Dehnungsmatrix, Materialgesetz und Vergleichsspannungen, Balkentheorie, Torsionsstab, Kinematik
