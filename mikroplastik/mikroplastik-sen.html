@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/gh/ncase/nutshell@1.0.2/nutshell.js">
+Nutshell.setOptions({
+    startOnLoad: true, // Start Nutshell on load? (default: true)
+    lang: 'de', // Language (default: 'en', which is English)
+    dontEmbedHeadings: true, // If 'true', removes the "embed this as a nutshell" option on headings
+});
+</script>
+<header>
+<link rel="stylesheet" href="mystyle.css">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+</header>
+<body>
+<p>“Du 😋 jede Woche <a href="#paper">:0,1 g bis 5 g</a> an
+Mikroplastik”.</p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<p> </p>
+<hr />
+<p>Martin Pletz, Leoben, 2023-11.</p>
+<!-- ------ [:(alle links)](#links) ------------------------ -->
+<h2 id="x-paper">:x paper</h2>
+<p>Das wird im Paper (Senathirayah et al. 2021) berechnet. Doch <a
+href="#analyse">:wie</a>?</p>
+<ul>
+<li>K. Senathirajah, S. Attwood, G. Bhagwat, M. Carbery, S. Wilson, T.
+Palanisami, <em>Estimation of the mass of microplastics ingested – A
+pivotal first step towards human health risk assessment</em>, Journal of
+Hazardous Materials. 404 (2021) (<a
+href="https://doi.org/10.1016/j.jhazmat.2020.124004">link</a>)</li>
+</ul>
+<h2 id="x-analyse">:x analyse</h2>
+<p>Als erstes schätzen sie ab, was Menschen an Wasser aus Flaschen (💧)
+und Bier (🍺) <a href="#sen-trinken">:trinken</a> bzw. Salz (🧂) und
+Krustentiere (🦀) <a href="#sen-essen">:essen</a>. Dann suchten sie in
+der Literatur nach Arbeiten, die herausfanden, wie viele
+Mikroplastikpartikel pro Liter oder Kilogramm in 💧, 🍺, 🧂 und 🦀
+enthalten ist and nach Arbeiten, aus denen sie die Größe und damit das
+Gewicht dieser Partikel abschätzten.</p>
+<p>Dementsprechend nimmt man in der Woche 173 bis 3355 (💧), 3,4 bis 17
+(🍺), 0,79 bis 2,1 (🧂) und 50 bis 312 (🦀) Partikel auf. <a
+href="#problem-num-mass">:Unabhängig</a> von den Arbeiten, die
+Partikelzahlen bestimmt haben, schätzen <a href="#szenarios">:drei
+Szenarios</a> schätzen sie das Partikelgewicht ab und kamen damit auf
+5.5 g/Woche, 0.1 g/Woche und 0.3 g/Woche.</p>
+<h2 id="x-problem-num-mass">:x problem-num-mass</h2>
+<p>Das ist aber ein Problem: umso genauer man hinschaut, umso mehr
+Partikel findet man. Für Wasser schaut das so aus:</p>
+<p><img src="zahl-groesze.png" /></p>
+<p>Das ist natürlich ein großes Problem, wenn man bei den mittleren
+Partikelmassen nicht berücksichtigt, wie genau man bei den
+Partikelzahlen hingeschaut hat.</p>
+<h2 id="x-sen-trinken">:x sen-trinken</h2>
+<p>Wird in Senathirayah et al. 2021 nicht ganz klar, könnte 219 Liter
+Wasser aus Plastikflaschen und 6 Liter Bier (wobei sie sich auf eine <a
+href="https://www.alcohol.org/guides/global-drinking-demographics/">WHO
+Website</a> und die Zahlen für Deutschland beziehen und vermutlich die
+Liter an reinem Alkohol (6) mit Litern an getrunkenem Bier verwechselt
+haben, die wohl eher bei <a
+href="https://de.statista.com/statistik/daten/studie/4628/umfrage/entwicklung-des-bierverbrauchs-pro-kopf-in-deutschland-seit-2000/">90
+Litern</a> pro Kopf und Jahr liegt) im Jahr sein</p>
+<h2 id="x-sen-essen">:x sen-essen</h2>
+<p>Etwa 3,8 kg Salz und 20 kg Fisch im Jahr</p>
+<h2 id="x-szenarios">:x szenarios</h2>
+<ol type="1">
+<li>Aus Studien, die Mikroplastik aus dem <a href="#meer">:Meer</a>
+gefischt haben und sowohl Gesamtmassen als auch Gesamtpartikelanzahl <a
+href="#szen-1">:angegeben haben</a>: <a href="#masse-szen-1">:2.8 mg</a>
+pro Partikel.</li>
+<li>Aus Studien, die die <a href="#groessenverteilung">:Größenverteilung
+der Partikel</a> gemessen haben und die Masse berechnet unter der
+Annahme, dass die Partikel <a href="#kugelform">:kugelförmig</a> sind:
+0.43 µg (💧), 0.48 mg (🍺), <a href="#salz">:13 mg (🧂)</a> und 2.9 ng
+(🦀).<br />
+</li>
+<li>Auch aus Größenverteilung der Partikel, doch die Partikel sind hier
+<a href="#wuerfelform">:würfelförmig</a> angenommen, alle etwa 90%
+größere Masse als bei Szenario 2.</li>
+</ol>
+<h2 id="x-salz">:x salz</h2>
+<p>diese 13 mg entsprechen kugelförmigen Partikeln mit einem Durchmesser
+von 2,94 mm</p>
+<h2 id="x-meer">:x meer</h2>
+<p>ja, aus dem Meer! Wenn du dich fragst, warum die Partikel mit Meer
+genau so groß sein sollen wie die in unseren Nahrungsmitteln, dann hast
+du Recht.</p>
+<h2 id="x-szen-1">:x szen-1</h2>
+<p>da das Diagramm mit den Cox und anderen Arbeiten reintun und
+erklären…</p>
+<p><img src="masse-partikel.png" /></p>
+<h2 id="x-masse-szen-1">:x masse-szen-1</h2>
+<p>Unter der Annahme, dass das Partikel in Plastikflaschen sind und aus
+PET bestehen (Dichte von 1.4 g/cm<sup>3</sup>) kommt man damit auf einen
+Durchmesser von 1.56 mm. Was insofern interessant ist, als dass die
+angeblich für einen Größenbereich von 0-1 mm bestimmt wurden.</p>
+<h2 id="x-groessenverteilung">:x groessenverteilung</h2>
+<p>da ein schönes Diagramm her tun und das erklären…</p>
+<p><img src="verteilung.png" /></p>
+<h2 id="x-kugelform">:x kugelform</h2>
+<p>Was nicht besonders realistisch ist: Zum Beispiel <a href="">hier</a>
+wird beschrieben, dass die meisten Partikel Fasern und Folien sind, die
+bei gleicher Größe sehr viel kleinere Massen aus Kugeln haben.</p>
+<h2 id="x-wuerfelform">:x wuerfelform</h2>
+<p>Was noch unrealistischer als die Kugelform ist: Würfelförmige
+Partikel kommen in Arbeiten, die sich mit den Partikelformen von
+Mikroplastik beschäftigen, überhaupt nicht vor.</p>
+<!-- ------------------------------------------------------ -->
+</body>
+</html>
