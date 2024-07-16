@@ -7,6 +7,7 @@
 
 */
 
+
 body {
 	text-align:  center;
 	color:       #000;
@@ -19,8 +20,25 @@ body {
 	margin:      auto;
 	max-width:   33em;
 	color:       rgb(10, 10, 10);
+    counter-reset: figures;
 }
 
+/* added to say Figure 1: ... in the captions*/
+
+figcaption {
+    counter-increment: figures; /* count the number of fig captions */
+    font-size:   75%;
+	padding:     1em;
+	padding-top: 0.5em;
+	color:       #aaa;
+  }
+
+  figcaption::before {
+    content: 'Figure ' counter(figures) ': '; /* display the figure number */
+  }
+
+
+  
 a {
 	outline:         none !important;
 	font-weight:     bold;
@@ -130,12 +148,7 @@ math[display="block"] {
 	margin:     1em 0 1em 0;
 }
 
-figcaption {
-	font-size:   75%;
-	padding:     1em;
-	padding-top: 0.5em;
-	color:       #aaa;
-}
+
 
 blockquote {
 	border-left:  5px solid #eee;
