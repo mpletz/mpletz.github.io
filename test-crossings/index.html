@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Chapter 2: Modeling rolling contact fatigue in crossing noses</title>
+	</head>
+<body>
+<h2>Chapter 2: Modeling rolling contact fatigue in crossing noses</h2>
+
+<p></p>
+
+<p>In the railway track, crossings (also called points or switches) let the train switch from one track to another. They are therefore a key part of the track structure, particularly close and at railway stations. The crossings consist of a switch panel (where the switch rails guide the train either on one or the other track) and a crossing panel, where the inner rails of the two tracks cross each other. At this crossing, the flange of the wheel has to be...: a) just run over the continuous rail that is in the way, b) slits in the rail: crossing nose (or frog) and wing rails: fixed crossing, or c) like (b) but with a movable crossing nose or wing rails to have continuous running surface.</p>
+
+<p>Crossing panel with fixed crossing: with completely controlled geometry of wheel and rails: smooth transition with no vertical movement of the wheel, and therefore no impact (dynamic increase in the vertical contact force). However, due to geometric constraints, the contact area in the region of the transition is smaller than on the regular wheel. Therefore, more wear, plastic deformation, and RCF is expected. Which changes the geometry and therefore leads to a vertical movement of the wheel as it runs through a crossing, which is associated with an impact that increases the vertical contact forces and in term the contact stresses.</p>
+
+<p></p>
+
+<p></p>
+
+<figure><img src="Image%2013.07.24,%2008-17.pdf" alt="A fixed crossing with its wing rails and crossing nose. The wheel switches running from one wing rail to the crossing nose, which is associated with a vertical movement of the wheel."/><figcaption>A fixed crossing with its wing rails and crossing nose. The wheel switches running from one wing rail to the crossing nose, which is associated with a vertical movement of the wheel.</figcaption></figure>
+
+<figure><img src="Weichen-2.pdf"/></figure>
+
+<h3>Plastic load redistribution in the crossing nose</h3>
+
+<p>Repeated impact of wheels on the narrow crossing nose: plastic deformation that flattens the top and therefore increases the size of the contact surface. This also reduces the contact pressure, which is associated with less wear or crack formation. Cyclic plastic material behavior.</p>
+
+<p>Compression: this is good: cross-section increases. Hertz-contact: this is even better, because the contact surface increases even more!!!</p>
+
+<figure><img src="Image%2011.07.24,%2013-45.pdf"/></figure>
+
+<p>Beside from the issue that hundreds of cycles of this system need to be computed to accurately capture this „geometric shakedown“ (as described in @johnson-1989), the crossing is not overrun each time by the same wheel profile. On the contrary, there can be a wide rage of worn wheel profiles, that influence the position of impact on the crossing nose and can flatten the crossing nose in different directions, which limits the reduction of contact pressure for each of these wheels.</p>
+
+<blockquote>
+<p>Simplified model of crossing impact: get angle, WR radius, and CN radius from geometry, then compute the impact for that. More general applicable and faster to run.</p>
+</blockquote>
+
+<p>To study the distribution of wheel profiles and multiple load cycles in reasonable computation times, a simplified model for the impact of the wheel on the crossing nose has been developed. It introduces a wheel with a flat running surface, and reduces the crossing nose to one where the head radius and the vertical level are both defined as a function of the longitudinal coordinate <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math>. Also, there are no wing rails in this simplified model. Instead, a geometrical analysis predicts the position <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math> and the angle <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math> that the wheel impacts on the crossing nose, see Fig. 3. In this way, a range of wheel profiles can easily be modeled and computation times can be considerably reduced. The dynamics of the wheel on the wing rail are therefore disregarded, which is a good approximation for not too big train speeds.</p>
+
+<figure><img src="Weichen-4.pdf"/></figure>
+
+<p>This simple model is introduced in Paper A. <mark>describe in more detail…</mark></p>
+
+<h3>Multiple load cycles</h3>
+
+<p> The crossing node plastically adapts to the loading in the first dozens of load cycles and then only continues to plastically deform in a very small (unwanted) extend or if completely different wheels come along. Therefore, the plastic adaption of the crossing nose to the loading can be studied with a limited number of load cycles. The simple model proposed in Paper A is taken and a) one wheel profile or b) a range of wheel profiles is selected that repeatedly impact onto the crossing nose, as indicated in Figure 5. If the same wheel impacts onto the crossing nose, it makes a distinctive dent in the crossing nose, which can in turn lead to increased dynamic forces. This increase in dynamic forces can increase the loads and then lead to further plastic deformation, or even to issues regarding the run of the whole train, which would require re-profiling of the crossing nose. For the varied wheel profiles, the dent is more smooth and issues with increased dynamic forces are limited. </p>
+
+<figure><img src="Weichen-5.pdf"/></figure>
+
+<p>This plastic adaption to the wheel profile spectrum the crossing is exposed to contributes to the durability of the crossing. It is the reason for using high Manganese steels (also called Hadfileld steels, with a typical Manganese content of 13%) that initially have a small yield stress of about 300 MPa, but work harden extensively, with an increase in the yield stress of way above 1000 MPa. This means that they initially change their geometry but then tend to stabilize due to the geometric adaption and hardening of the material.</p>
+
+<p>Two stages can be defined in the life of a crossing nose: a) the run-in process in the first few cycles and b) the further cyclic plastic deformation of the run-in geometry, as shown in Figure 6.</p>
+
+<ol>
+	<li>In the run-in process, the plastic deformation should be large enough to reduce the stresses, but not so large that the impact forces are considerably increased. A constitutive model of the crossing material needs to accurately represent these first cycles.</li>
+	<li>The further plastic deformation is more subtle: it is interesting, if there is further and further unfavourable plastic deformation over thousands of cycles. Which either needs constitutive models that can accurately account for the ratchetting of the material, or simple approaches that judge if shakedown is reached based on stresses computed in the model and the yield stress in the material. The shakedown maps are widely used to do so, which plot the maximum contact pressure divided by the shear yield stress over the creepage <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math>. </li>
+</ol>
+
+<p>This plastic adaption also has three practical effects: a) the tolerances in the initial geometry are not so crucial as for high-strength steels. Indeed, it could even make sense to account for the plastic deformation and optimize the initial geometry so to obtain a preferable run-in geometry. b) If a very worn wheel profile comes along, the impact rather leads to plastic deformation and adapts to it, but c) the low initial yield stress is associated with a low hardness, which lies below the requirements regarding the track infrastructure. Since Manganese crossings are widely used, there obviously has been a solution for this too small hardness.</p>
+
+<p>But how to increase the hardness on the running surfaces of a cast Manganese crossing? For continuous profiles, cold working such as rolling is widely used. It introduces plastic deformations and residual stresses and therefore increases the hardness. But somehow rolling a crossing may be possible, but can be very tedious considering the many different crossing geometries, and that after rolling, the crossing should have a defined geometry. So the solution that crossing manufacturers have come up with is explosive hardening: some layers of explosives are stacked on the cast crossings. During the explosion, the shock wave introduces plastic deformations in the top layer of the crossing, obtaining acceptable hardness. (<mark>Zitate raussuchen: <a href="https://www.voestalpine.com/railway-systems/en/products/pre-hardened-manganese-crossing/">VAE</a>, <a href="http://dx.doi.org/10.1179/174328408X363263">1</a>, <a href="https://doi.org/10.1179/174328408X363263">2</a>: erwähnen, dass die gescheit springen dabei</mark>).</p>
+
+<p>Mit/Ohne: hohe Zyklen beurteilen, ob es weiter geht: genauere Aussagen nur möglich, wenn sowohl geometrischer „shakedown“ als auch material shakedown berücksichtigt werden. This has bed done in previous works (wiest) but also with the simplified crossing model: hardness maps on cross-section: put into the model, then run over…</p>
+
+<p><mark>(beschreiben ergebnisse explosion hardened stuff)</mark></p>
+
+<blockquote>
+<p>(The plastic adaptation of the manganese steel is nice, but if it does not reach shakedown after some thousand cycles and continues to plastically deform, the dynamics of the process become worse. This work investigates this run-in state with a measured deformed geometry and accounting for the pre-deformation (including the hardening of the material) by using hardness measurements from which yield stresses are extracted.)</p>
+</blockquote>
+
+<figure><img src="Weichen-6.pdf"/></figure>
+
+<p><mark>also mention subsurface damage: Dang-Van, …</mark></p>
+
+<blockquote>
+<p>How about a subsurface damage parameter (Dang-Van): how high is it for different crossing materials? And how is it affected by the plastic deformation of those materials, which of course determines the stresses that also cause the damage? Five types of wheel with ten load cycles each to obtain the adaptation which is highest in the first few cycles and then declines.</p>
+</blockquote>
+
+<p></p>
+
+<p>But how should that model practically be used for assessing damage in crossings? What do the dynamic forces, contact pressures, and creepages, which are influenced by the run-in process, mean for wear and RCF? Answering this question has been the aim of the work in Paper D, which introduces a damage assessment toolbox and is described in the next section.</p>
+
+<h3>The damage assessment toolbox</h3>
+
+<p>The geometry of the crossing and the wheel are of course crucial for the contact points and dynamic forces. But as a next step, the question is how the model results can be used to assess damage. Evaluating damage variables from the following stress and strain fields in the model can be too complicated. Therefore, in Paper D we came up with up with an interface using a limited number of load parameters of the contact patch evaluated in the full FEM model that are used in an input in existing, and, at a later point, can be used in newly developed damage models.</p>
+
+<p>These load parameters of the contact patch are the maximum contact pressure <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_0</annotation></semantics></math>, the creepage <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math>, and the contact patch length <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math>. For the damage evaluation, furthermore the train speed <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math> and coefficient of friction <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math> are needed.</p>
+
+<p>This means that for each longitudinal position of the wheel, these parameters can be evaluated and used to predict damage separately for the wing rail and the crossing nose. It therefore allows the identify critical regions in crossings.</p>
+
+<p>To first show how this could work, existing damage criteria are used in this setup. The FEM model of one crossing nose is build up, load parameters are evaluated and then they are used to assess wear with a wear map, RCF with a shakedown map, and subsurface damage with the Dang-Van criterion.</p>
+
+<p>Both RCF damage and subsurface damage can be evaluated based on<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_0</annotation></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math>, only. From the sher yield strength <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math> and the Dang Van parameters, borders of the damage / no damage regions can be drawn in the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_0</annotation></semantics></math>-<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math> diagram. Then, the points along the longitudinal position along the wing rail and crossing nose can be plotted in the same diagram, indicating positions of damage.</p>
+
+<p>For predicting wear, first the wear regime needs to be identified in the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_0</annotation></semantics></math>-<math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math> diagram. Then, Archards wear law can predict the wear depth using the maximum contact pressure <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">p_0</annotation></semantics></math> and the total sliding distance as the contact patch crosses one point of the crossing, which corresponds to <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mtext> </mtext><mi>a</mi><mtext> </mtext><mi>c</mi></mrow><annotation encoding="application/x-tex">2\,a\,c</annotation></semantics></math>.</p>
+
+<figure><img src="Weichen-7.pdf"/></figure>
+
+<p>Figure 8 shows how the damage assessment toolbox can be used to evaluate arising damage along the longitudinal coordinate of a crossing nose. It identifies the extend of wear in the different regions as well as the regions where surface RCF and subsurface damage are expected. In Paper D, these predicted regions are compared to observations from the field, and show a qualitative agreement.</p>
+
+<figure><img src="Weichen-8.pdf"/></figure>
+
+<p>This toolbox and the interface established shows that newer models that predict the local damage such as RCF cracks (Werner Papers) can be used to create lookup tables of <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>p</mi><mn>0</mn></msub><mo separator="true">,</mo><mtext> </mtext><mi>c</mi><mo separator="true">,</mo><mtext> </mtext><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(p_0,\,c,\,a)</annotation></semantics></math>, the train speed, and the friction coefficient to then quickly assessing this kind of damage for a crossing model. <mark>da die Überleitung, die gleich kommt, etwas vorweggenommen</mark></p>
+
+<p><mark>Problem melden an ulysses mit dauernd ausgeblendeter tastatur</mark></p>
+
+<p></p>
+
+<p>But what really happens on the scale of the material? What stands behind this shakedown maps and what does the small cyclic plastic deformation mean for wear and RCF? What are the physical mechanisms of crack development and wear, and how are they related to the cyclic contact loading? Can this be better understood, and can conclusions be drawn, which can contribute to developing better crossing materials? </p>
+
+<p>This is addressed in the next chapter. Since these questions concern regular rails as much as crossing noses, and the load situation rails is much more simple than for crossings, it is studied for loads occurring in rails and rail material. However, the conclusions drawn can be mostly transferred to crossings.</p>
+
+</body>
+</html>
+
