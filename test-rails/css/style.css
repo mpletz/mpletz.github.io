@@ -132,6 +132,7 @@ video {
 
 img {
 	width: 600px;
+	max-width: 100%;
 }
 
 figure {
