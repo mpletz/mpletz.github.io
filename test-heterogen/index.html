@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>Chapter 4: Tough microstructures: Predicting failure in heterogeneous materials</title>
+	</head>
+<body>
+<h2>Chapter 4: Tough microstructures: Predicting failure in heterogeneous materials</h2>
+
+<p>Das wird erst die zweite Figure in diesem Kapitel, davor ist noch was zu z.B. ABS und den Schädigungsmechanismen dort (erwähnend, dass es bei composites, metallen durch die Mikrostruktur usw. auch solche Effekte gibt).</p>
+
+<p>targeted angle correction @frankl-2022, layered fracture including initiation @pletz-2022, efficient initiation prediction @rettl-2022, optimization algorithms @rettl-2023, conForce @rettl-2024, TAC3D, (<em>R1 submitted</em>), incremental crack growth @pletz-2024</p>
+
+<p>Beispiele aus der Natur: deep sea sponges, dental stuff, bone, wood, nacre, </p>
+
+<p>dental enamel <a href="https://doi.org/10.1016/j.actbio.2020.02.019">example</a> und kiener <a href="http://dx.doi.org/10.1016/j.actbio.2023.04.035">paper</a></p>
+
+<p>Beispiele technische Nutzung: plywood, layered structures, ABS, additive man. structures: varied print direction und dann auch die sachen mit kombiniert gummi und hartschichten, layered metal stuff esi</p>
+
+<p><strong>Necessary for this</strong>:</p>
+
+<ul>
+	<li>crack propagation models</li>
+	<li>crack iniitiation models</li>
+	<li>optimization</li>
+</ul>
+
+<p>And then combine everything :-) Pletz, Arbieter Paper ein bissl und dann richtig mit Optimierung in Rettl paper 2024.</p>
+
+<figure><img src="Image%2013.07.24,%2008-10.pdf" alt="Plate with matrix material (green), a second phase (yellow), and voids, showing typical failure mechanisms. These mechanisms are crack propagation with crack arrest, crack initiation, and debonding of interfaces. Optimization algorithms can change the geometry to maximize the toughening effects. "/><figcaption>Plate with matrix material (green), a second phase (yellow), and voids, showing typical failure mechanisms. These mechanisms are crack propagation with crack arrest, crack initiation, and debonding of interfaces. Optimization algorithms can change the geometry to maximize the toughening effects. </figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-11.pdf" alt="The difference in failure stress  of a plate without and with an initial crack. Without the crack, the plate fails at the material’s strength . With a crack, it fails much earlier at a stress where the stress intensity  of the crack reaches the material’s fracture toughness ."/><figcaption>The difference in failure stress <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">f</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{f}</annotation></semantics></math> of a plate without and with an initial crack. Without the crack, the plate fails at the material’s strength <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">c</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{c}</annotation></semantics></math>. With a crack, it fails much earlier at a stress where the stress intensity <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math> of the crack reaches the material’s fracture toughness <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>K</mi><mi mathvariant="normal">c</mi></msub></mrow><annotation encoding="application/x-tex">K_\mathrm{c}</annotation></semantics></math>.</figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-11-1.pdf" alt="What happens once a crack approaches an interlayer in a layered structure: a) if the interlayer has a lower Young’s modulus  or yield stress  than the matrix material, the crack can be stopped. This can be followed by b) debonding. An extreme case of = 0 interlayers corresponds to separate layers, wehre the crack simply stops and needs to reinitiate from the remaining layers."/><figcaption>What happens once a crack approaches an interlayer in a layered structure: a) if the interlayer has a lower Young’s modulus <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math> or yield stress <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">y</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{y}</annotation></semantics></math> than the matrix material, the crack can be stopped. This can be followed by b) debonding. An extreme case of <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math>= 0 interlayers corresponds to separate layers, wehre the crack simply stops and needs to reinitiate from the remaining layers.</figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-11-2.pdf" alt="If initial cracks or crack-like defects cannot be avoided, the layered structures can significantly increase the failure stress  compared to the cracked bulk plates. In the  diagram,  is reduced only by the fraction of the failed layers and not much more as for the crack."/><figcaption>If initial cracks or crack-like defects cannot be avoided, the layered structures can significantly increase the failure stress <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">f</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{f}</annotation></semantics></math> compared to the cracked bulk plates. In the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">f</mi></msub><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{f}-a</annotation></semantics></math> diagram, <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>σ</mi><mi mathvariant="normal">f</mi></msub></mrow><annotation encoding="application/x-tex">\sigma_\mathrm{f}</annotation></semantics></math> is reduced only by the fraction of the failed layers and not much more as for the crack.</figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-11-3.pdf" alt="A plate with a hole and an initial crack is loaded in a strain-controlled way. Initially, the stress increases linearly until it drops once the initial crack starts to propagate. The crack propagation (stage 1 in the diagram), however, is stopped once it runs into the circular hole. The initiation of a crack from the hole heeds a higher stress (point 2 in the diagram). Once a crack has initiated, it grows through the rest of the plate, so the stress drops to zero (stage 3)."/><figcaption>A plate with a hole and an initial crack is loaded in a strain-controlled way. Initially, the stress increases linearly until it drops once the initial crack starts to propagate. The crack propagation (stage 1 in the diagram), however, is stopped once it runs into the circular hole. The initiation of a crack from the hole heeds a higher stress (point 2 in the diagram). Once a crack has initiated, it grows through the rest of the plate, so the stress drops to zero (stage 3).</figcaption></figure>
+
+<h3>Predicting crack propagation</h3>
+
+<figure><img src="Image%2013.07.24,%2008-11-4.pdf" alt="Predicting crack propagation needs the load at which the crack propagates (using some kind of crack-driving force), and the crack propagation direction. In simple cases, the crack path is known due to symmetry. In other cases, it is more complicated and a crack model also needs to predict the propagation direction."/><figcaption>Predicting crack propagation needs the load at which the crack propagates (using some kind of crack-driving force), and the crack propagation direction. In simple cases, the crack path is known due to symmetry. In other cases, it is more complicated and a crack model also needs to predict the propagation direction.</figcaption></figure>
+
+<p>Paper J<sup><a id="ffn1" href="#fn1" class="footnote">1</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-12.pdf" alt="Configurational forces define the gradient in strain energy for a change in a bodies configuration. For a bi-material plate unter an applied strain, the moving the interface from the less stiff to the stiffer phase increases the strain energy. For a crack, reducing the crack length would increase the energy, which means that the configurational forces can be used to compute the energy release for crack growth. "/><figcaption>Configurational forces define the gradient in strain energy for a change in a bodies configuration. For a bi-material plate unter an applied strain, the moving the interface from the less stiff to the stiffer phase increases the strain energy. For a crack, reducing the crack length would increase the energy, which means that the configurational forces can be used to compute the energy release for crack growth. </figcaption></figure>
+
+<p>Paper K<sup><a id="ffn2" href="#fn2" class="footnote">2</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-12-1.pdf" alt="For mixed mode loading (both mode I and mode II),  indicates a kink angle  unequal zero. However, the definition of  indicates moving the region of the crack tip in the opposite direction of , which is different from extending the crack in that direction. Also, for pure mode II loading (shear),  predicts a straight propagation, which deviates from other propagation direction criterions and experimental observations that show a kink angle of about 70°."/><figcaption>For mixed mode loading (both mode I and mode II), <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math> indicates a kink angle <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi mathvariant="normal">K</mi></msub></mrow><annotation encoding="application/x-tex">\varphi_\mathrm{K}</annotation></semantics></math> unequal zero. However, the definition of <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math> indicates moving the region of the crack tip in the opposite direction of <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math>, which is different from extending the crack in that direction. Also, for pure mode II loading (shear), <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math> predicts a straight propagation, which deviates from other propagation direction criterions and experimental observations that show a kink angle of about 70°.</figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-12-2.pdf" alt="Iterative method for predicting the accurate crack propagation direction: The previous crack is extended by a length  in the opposite direction of . Then, this kink angle is repeatedly updated using  computed at the crack tip of this extended crack, until the kink angle changes only slightly from one iteration to the next. In this way, accurate kink angles can be found for mixed mode loading conditions."/><figcaption>Iterative method for predicting the accurate crack propagation direction: The previous crack is extended by a length <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\Delta a</annotation></semantics></math> in the opposite direction of <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math>. Then, this kink angle is repeatedly updated using <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math> computed at the crack tip of this extended crack, until the kink angle changes only slightly from one iteration to the next. In this way, accurate kink angles can be found for mixed mode loading conditions.</figcaption></figure>
+
+<p>Paper L<sup><a id="ffn3" href="#fn3" class="footnote">3</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-12-3.pdf"/></figure>
+
+<h3>Crack initiation criterions</h3>
+
+<figure><img src="Image%2013.07.24,%2008-12-4.pdf" alt="The vertical stress  and the energy release rate  over the length  of a potential crack. Both  and  need to be fulfilled for a crack to initiate. In the case of a smooth surface (left), the stress criterion is sufficient to assess crack initiation. In the case of a long crack (middle), the energy criterion can be used. In the case of a sharp notch (right), a coupled stress and energy criterion is needed to accurately predict crack initiation."/><figcaption>The vertical stress <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math> and the energy release rate <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math> over the length <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math> of a potential crack. Both <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>σ</mi><mo>&gt;</mo><msub><mi>σ</mi><mi mathvariant="normal">c</mi></msub></mrow><annotation encoding="application/x-tex">\sigma&gt;\sigma_\mathrm{c}</annotation></semantics></math> and <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>&gt;</mo><msub><mi>G</mi><mi mathvariant="normal">c</mi></msub></mrow><annotation encoding="application/x-tex">G&gt;G_\mathrm{c}</annotation></semantics></math> need to be fulfilled for a crack to initiate. In the case of a smooth surface (left), the stress criterion is sufficient to assess crack initiation. In the case of a long crack (middle), the energy criterion can be used. In the case of a sharp notch (right), a coupled stress and energy criterion is needed to accurately predict crack initiation.</figcaption></figure>
+
+<p>Paper M<sup><a id="ffn4" href="#fn4" class="footnote">4</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-12-5.pdf" alt="Instead of running multiple FEM computations to obtain the  curve for the coupled criterion, Paper M proposes a multi-scale method using a precomputed cell with a range of deformation modes applied to it This cell is fitted to the surface of arbitrary-shaped holes to rapidly assess crack initiation. "/><figcaption>Instead of running multiple FEM computations to obtain the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">G(a)</annotation></semantics></math> curve for the coupled criterion, Paper M proposes a multi-scale method using a precomputed cell with a range of deformation modes applied to it This cell is fitted to the surface of arbitrary-shaped holes to rapidly assess crack initiation. </figcaption></figure>
+
+<h3>Geometry optimization</h3>
+
+<p>Paper N<sup><a id="ffn5" href="#fn5" class="footnote">5</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-12-6.pdf" alt="Common topology optimization uses the elements’ strain energy to adjust their density, which removes material in region of small stresses. This works well for simple load setups such as a concentrated load at the end of a cantilever beam. If this cantilever beam is loaded by its own weight and the displacement at the endpoint should be minimized, this system is highly nonlinear: removing material in some places also changes the load on the structure. Therefore, more general applicable methods are needed."/><figcaption>Common topology optimization uses the elements’ strain energy to adjust their density, which removes material in region of small stresses. This works well for simple load setups such as a concentrated load at the end of a cantilever beam. If this cantilever beam is loaded by its own weight and the displacement at the endpoint should be minimized, this system is highly nonlinear: removing material in some places also changes the load on the structure. Therefore, more general applicable methods are needed.</figcaption></figure>
+
+<figure><img src="Image%2013.07.24,%2008-13.pdf" alt="Schematic of the variable neighborhood search algorithm: starting from one of the voxels turned off (introducing a void), voxels in a certain distance are also switched on or off."/><figcaption>Schematic of the variable neighborhood search algorithm: starting from one of the voxels turned off (introducing a void), voxels in a certain distance are also switched on or off.</figcaption></figure>
+
+<h3>Putting it all together</h3>
+
+<p>Paper O<sup><a id="ffn6" href="#fn6" class="footnote">6</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-13-1.pdf" alt="Modeling the bending fracture of a a beam that contains one brittle interlayer in a ductile PE matrix. For the crack path in the symmetry plane, crack growth and crack initiation in the brittle layer are accounted for. As in the experiment, the model predicts a blunting of the initial crack and then a crack initiation in the brittle layer, which is associated with a drop of force in the  diagram."/><figcaption>Modeling the bending fracture of a a beam that contains one brittle interlayer in a ductile PE matrix. For the crack path in the symmetry plane, crack growth and crack initiation in the brittle layer are accounted for. As in the experiment, the model predicts a blunting of the initial crack and then a crack initiation in the brittle layer, which is associated with a drop of force in the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>−</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">F-u</annotation></semantics></math> diagram.</figcaption></figure>
+
+<p>Paper P<sup><a id="ffn7" href="#fn7" class="footnote">7</a></sup></p>
+
+<figure><img src="Image%2013.07.24,%2008-13-2.pdf" alt="Combination of crack propagation and crack initiation in a quasi-brittle plate with arbitrary-shaped holes. The propagation uses a configurational-force based crack-driving force  and the initiation the stress-based criterion of Taylor. In this way, the sequence of crack propagations and initiations can be predicted. From the corresponding critical applied displacements and plate stiffnesses, the  curve is predicted."/><figcaption>Combination of crack propagation and crack initiation in a quasi-brittle plate with arbitrary-shaped holes. The propagation uses a configurational-force based crack-driving force <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>J</mi><mrow><mi mathvariant="normal">t</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">p</mi></mrow></msub></mrow><annotation encoding="application/x-tex">J_\mathrm{tip}</annotation></semantics></math> and the initiation the stress-based criterion of Taylor. In this way, the sequence of crack propagations and initiations can be predicted. From the corresponding critical applied displacements and plate stiffnesses, the <math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>−</mo><mi>u</mi></mrow><annotation encoding="application/x-tex">F-u</annotation></semantics></math> curve is predicted.</figcaption></figure>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<p></p>
+
+<ol id="footnotes">
+	<li id="fn1"><strong>Paper J</strong>: M. Rettl, S.M. Frankl, M. Pletz*, M. Tauscher, C. Schuecker, ConForce: Computation of configurational forces for FEM results, SoftwareX, 26 (2024) 101718. <a href="https://doi.org/10.1016/j.softx.2024.101718">DOI</a>. <a href="#ffn1">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn2"><strong>Paper K</strong>: S.M. Frankl, M. Pletz*, C. Schuecker, Improved concept for iterative crack propagation using configurational forces for targeted angle correction, Engineering Fracture Mechanics. 266 (2022) 108403. <a href="https://doi.org/10.1016/j.engfracmech.2022.108403">DOI</a>. <a href="#ffn2">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn3"><strong>Paper L</strong>: M. Pletz*, S.M. Frankl, C. Schuecker: Evaluation of existing and introduction of new incremental crack propagation approaches in FEM, submitted to Theoretical and Applied Fracture Mechanics, 131, 104452 (2024). <a href="https://doi.org/10.1016/j.tafmec.2024.104452">DOI</a>. <a href="#ffn3">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn4"><strong>Paper M</strong>: M. Rettl, M. Pletz*, C. Schuecker, Efficient prediction of crack initiation from arbitrary 2D notches, Theoretical and Applied Fracture Mechanics. 119 (2022) 103376. <a href="https://doi.org/10.1016/j.tafmec.2022.103376">DOI</a>. <a href="#ffn4">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn5"><strong>Paper N</strong>: M. Rettl, M. Pletz*, C. Schuecker, Evaluation of combinatorial algorithms for optimizing highly nonlinear structural problems, Materials and Design (2023). <a href="https://doi.org/10.1016/j.matdes.2023.111958">DOI</a>. <a href="#ffn5">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn6"><strong>Paper O</strong>: M. Pletz*, F.J. Arbeiter*, Combined Crack Initiation and Crack Growth Model for Multi-Layer Polymer Materials, Materials. 15 (2022) 3273. <a href="https://doi.org/10.3390/ma15093273">DOI</a>. <a href="#ffn6">&#x21A9;&#xFE0E;</a></li>
+	<li id="fn7"><strong>Paper P</strong>: M. Rettl, M. Pletz*, C. Schuecker, Optimizing the hole geometry of 2D plates for maximum tensile toughness, <em>to be submitted</em> to Theoretical and Applied Fracture Mechanics, 2024. <a href="#ffn7">&#x21A9;&#xFE0E;</a></li>
+</ol></body>
+</html>
+
